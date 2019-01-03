@@ -31,9 +31,10 @@ namespace PerfIcon
             }
 
             DrawGraph();
-            notifyIcon.Visible = true;
+            notifyIcon.Visible = true;            
             tMain.Enabled = true;
             SwTimer.Restart();
+            WindowState = FormWindowState.Minimized;
         }
 
         private void TMain_Tick(object sender, EventArgs e)
