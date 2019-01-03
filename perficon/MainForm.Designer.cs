@@ -41,14 +41,14 @@
             // 
             // tMain
             // 
-            this.tMain.Tick += new System.EventHandler(this.tMain_Tick);
+            this.tMain.Tick += new System.EventHandler(this.TMain_Tick);
             // 
             // notifyIcon
             // 
             this.notifyIcon.ContextMenuStrip = this.contextMenuStrip;
             this.notifyIcon.Text = "notifyIcon1";
             this.notifyIcon.Visible = true;
-            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseDoubleClick);
             // 
             // contextMenuStrip
             // 
@@ -65,7 +65,7 @@
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
             this.closeToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.closeToolStripMenuItem.Text = "Close";
-            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
             // 
             // hideOnMinimizeToolStripMenuItem
             // 
@@ -75,14 +75,14 @@
             this.hideOnMinimizeToolStripMenuItem.Name = "hideOnMinimizeToolStripMenuItem";
             this.hideOnMinimizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hideOnMinimizeToolStripMenuItem.Text = "Hide on Minimize";
-            this.hideOnMinimizeToolStripMenuItem.Click += new System.EventHandler(this.hideOnMinimizeToolStripMenuItem_Click);
+            this.hideOnMinimizeToolStripMenuItem.Click += new System.EventHandler(this.HideOnMinimizeToolStripMenuItem_Click);
             // 
             // showToolStripMenuItem
             // 
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
             this.showToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.showToolStripMenuItem.Text = "Show";
-            this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
+            this.showToolStripMenuItem.Click += new System.EventHandler(this.ShowToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 

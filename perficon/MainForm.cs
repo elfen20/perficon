@@ -36,7 +36,7 @@ namespace PerfIcon
             SwTimer.Restart();
         }
 
-        private void tMain_Tick(object sender, EventArgs e)
+        private void TMain_Tick(object sender, EventArgs e)
         {
             // get Performace, calculate Average
             MAPhysicalDisk.Add(PCPhysicalDisk.NextValue());
@@ -57,7 +57,7 @@ namespace PerfIcon
             using (var graphics = Graphics.FromImage(gBitmap))
             {
                 graphics.Clear(Color.Black);
-                graphics.DrawRectangle(Pens.Gray, 0,0,31,31);
+                graphics.DrawRectangle(Pens.LightGray, 0, 0, 31, 31);
                 int posX = 31 - MAGraph.Count;
                 foreach (float value in MAGraph)
                 {
@@ -72,8 +72,7 @@ namespace PerfIcon
 
             IntPtr HICon = gBitmap.GetHicon();
             notifyIcon.Icon = Icon.FromHandle(HICon); ;
-            notifyIcon.Text = String.Format("HDD:{0:0.##}%", MAPhysicalDisk.Average);
-
+            notifyIcon.Text = String.Format("HDD: {0:0.##}%", MAPhysicalDisk.Average);
 
             using (var graphics = this.CreateGraphics())
             {
@@ -81,7 +80,7 @@ namespace PerfIcon
             }
         }
 
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CloseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -98,21 +97,21 @@ namespace PerfIcon
             }
         }
 
-        private void hideOnMinimizeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void HideOnMinimizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainForm_Resize(sender, e);
         }
 
-        private void showToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ShowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Visible = true;
             WindowState = FormWindowState.Normal;
             this.BringToFront();
         }
 
-        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            showToolStripMenuItem_Click(sender, e);
+            ShowToolStripMenuItem_Click(sender, e);
         }
     }
 }
