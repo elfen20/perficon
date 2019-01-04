@@ -16,7 +16,9 @@ namespace PerfIcon
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            MainForm mainForm = new MainForm();
+            // don't start application with form to start invisible
+            Application.Run();
         }
     }
 }
