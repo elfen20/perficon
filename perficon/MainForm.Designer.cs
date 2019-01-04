@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.tMain = new System.Windows.Forms.Timer(this.components);
+            this.timerMain = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,9 +40,9 @@
             this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tMain
+            // timerMain
             // 
-            this.tMain.Tick += new System.EventHandler(this.TMain_Tick);
+            this.timerMain.Tick += new System.EventHandler(this.TimerMain_Tick);
             // 
             // notifyIcon
             // 
@@ -98,6 +98,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "PerfIcon";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -106,7 +107,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Timer tMain;
+        private System.Windows.Forms.Timer timerMain;
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
