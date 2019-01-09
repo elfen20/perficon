@@ -13,9 +13,9 @@ namespace PerfIcon
     public partial class MainForm : Form
     {
         /// <summary>
-        /// Stopwatch for checking when to redraw the graph
+        /// counter for checking when to redraw the graph
         /// </summary>
-        Stopwatch SwTimer = new Stopwatch();
+        int Counter = 0;
 
         /// <summary>
         /// Performance counter for physical disk activity
@@ -62,7 +62,6 @@ namespace PerfIcon
             DrawGraph();
             notifyIcon.Visible = true;            
             timerMain.Enabled = true;
-            SwTimer.Restart();
         }
 
         /// <summary>
@@ -74,12 +73,12 @@ namespace PerfIcon
         {
             // get Performace, calculate average
             MAPhysicalDisk.Add(PCPhysicalDisk.NextValue());
-            if (SwTimer.ElapsedMilliseconds > 1000)
+            Counter++;
+            if (Counter > 5)
             {
-                SwTimer.Reset();
                 MAGraph.Add(MAPhysicalDisk.Average);
                 DrawGraph();
-                SwTimer.Start();
+                Counter = 0;
             }
         }
 
